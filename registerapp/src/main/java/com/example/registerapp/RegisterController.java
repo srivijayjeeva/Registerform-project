@@ -1,28 +1,29 @@
 package com.example.registerapp;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.sql.*;
 
-@RestController
+@Controller
 public class RegisterController {
 
     @GetMapping("/")
     public String home() {
-        return "Application Running Successfully";
+        return "redirect:/register.html";
     }
 
     @PostMapping("/register")
+    @ResponseBody
     public String register(
             @RequestParam String name,
             @RequestParam String email,
             @RequestParam String password) {
 
         try {
-
             Connection con = DriverManager.getConnection(
-                "jdbc:mysql://database-2.cwdmmuiqazo8.us-east-1.rds.amazonaws.com:3306/registerdb",
+                "jdbc:mysql://YOUR-RDS-ENDPOINT:3306/registerdb",
                 "admin",
-                "srivijay"
+                "YOUR_PASSWORD"
             );
 
             PreparedStatement ps = con.prepareStatement(
