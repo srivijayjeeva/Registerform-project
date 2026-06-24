@@ -21,9 +21,9 @@ public class RegisterController {
 
         try {
             Connection con = DriverManager.getConnection(
-                "jdbc:mysql://YOUR-RDS-ENDPOINT:3306/registerdb",
+                "jdbc:mysql://database-2.cwdmmuiqazo8.us-east-1.rds.amazonaws.com/registerdb",
                 "admin",
-                "YOUR_PASSWORD"
+                "srivijay"
             );
 
             PreparedStatement ps = con.prepareStatement(
