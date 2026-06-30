@@ -21,7 +21,7 @@ public class RegisterController {
 
         try {
             Connection con = DriverManager.getConnection(
-                "jdbc:mysql://database-2.cwdmmuiqazo8.us-east-1.rds.amazonaws.com/registerdb",
+                "jdbc:mysql://database01.cwdmmuiqazo8.us-east-1.rds.amazonaws.com/registerdb",
                 "admin",
                 "srivijay"
             );
